@@ -13,11 +13,11 @@ const Match = (props) => {
 					<div>
 						game length: {match.game_length}
 					</div>
-					{/* {match.champion &&
+					{match.champion &&
 						<div>
 							Champion: {match.champion.name} {match.champion.title}
 						</div>
-					} */}
+					} 
 					
 					<div>
 						Kills: {match.kda.kills}, Deaths: {match.kda.deaths}, Assists: {match.kda.assists}
