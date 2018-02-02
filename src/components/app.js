@@ -17,7 +17,9 @@ class App extends Component {
 		this.props.getSummonerData('RiotSchmick');
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+  
+  }
 
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.summonerData.status === 'success'){
@@ -27,8 +29,8 @@ class App extends Component {
     }
     
     if(nextProps.matchHistory.status === 'success'){
-      //this.props.resetMatchHistoryStatus();
-      //this.setState({ loading_status: false });
+      this.props.resetMatchHistoryStatus();
+      this.setState({ loading_status: false });
 		}
 	}
 
