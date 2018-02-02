@@ -1,9 +1,12 @@
-import { GET_MATCH_HISTORY_DATA } from '../actions/CONSTANTS';
+import { GET_MATCH_HISTORY_DATA, RESET_MATCH_HISTORY_STATUS } from '../actions/CONSTANTS';
 
-export default function(state = {}, action){
+const INITIAL_STATUS = { status: null, matchHistory: null }
+export default function(state = INITIAL_STATUS, action){
 	switch(action.type){
 		case GET_MATCH_HISTORY_DATA:
-			return action.payload
+			return { ...state, status: null, matchHistory: action.payload };
+		case RESET_MATCH_HISTORY_STATUS:
+			return { ...state, status: null };
 		default:
 			return state;
 	}

@@ -1,8 +1,8 @@
-import { API_URL, GET_SUMMONER, GET_MATCH_HISTORY_DATA } from './CONSTANTS';
+import { API_URL, GET_SUMMONER, GET_MATCH_HISTORY_DATA, RESET_SUMMONER_STATUS, RESET_MATCH_HISTORY_STATUS } from './CONSTANTS';
 import axios from 'axios';
 
 export function getSummonerData(summonerName){
-	const request = axios.get(`${API_URL}/api/${summonerName}`);
+	const request = axios.get(`${API_URL}/api/summoner/${summonerName}`);
 	
 	return (dispatch) => {
 		request
@@ -27,6 +27,18 @@ export function getMatchHistoryData(accountId, startIndex, endIndex){
 			.catch(err => {
 				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'error', error: err, payload: data });
 			});
+	}
+}
+
+export function resetSummonerStatus(){
+	return {
+		type: RESET_SUMMONER_STATUS
+	}
+}
+
+export function resetMatchHistoryStatus(){
+	return {
+		type: RESET_MATCH_HISTORY_STATUS
 	}
 }
 
