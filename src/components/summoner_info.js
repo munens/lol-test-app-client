@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 const Summoner = (props) => {
 	const summoner = props.summonerData;
-	console.log(props)
 	return (
 		<div className="summoner-data">
 			{summoner &&

@@ -7,11 +7,10 @@ export function getSummonerData(summonerName){
 	return (dispatch) => {
 		request
 			.then(({data}) => {
-				console.log(data);
 				dispatch({ type: GET_SUMMONER, status: 'success', error: null, payload: data });
 			})
 			.catch(err => {
-				dispatch({ type: GET_SUMMONER, status: 'error', error: err, payload: data });
+				dispatch({ type: GET_SUMMONER, status: 'error', error: err, payload: null });
 			});
 	}
 }
@@ -21,11 +20,10 @@ export function getMatchHistoryData(accountId, startIndex, endIndex){
 	return (dispatch) => {
 		request
 			.then(({data}) => {
-				console.log(data);
 				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'success', error: null, payload: data });
 			})
 			.catch(err => {
-				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'error', error: err, payload: data });
+				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'error', error: err, payload: null });
 			});
 	}
 }

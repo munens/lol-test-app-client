@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Match from './match';
+import MatchList from './match_list';
+import SpinningCircle from './spinning_circle';
 
 const MatchHistory = (props) => {
-	console.log(props.matchHistory)
 	return (
 		<div className="match-history">
-			{props.matchHistory && props.matchHistory.map((match, index) => {
-				return (<Match key={index} match={match} />);
-			})}
+			{props.loading_status ? <SpinningCircle /> : <MatchList matchHistory={props.matchHistory} />}
 		</div>
 	);
 }
