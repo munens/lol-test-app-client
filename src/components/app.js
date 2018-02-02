@@ -19,7 +19,6 @@ class App extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-    debugger;
 		if(nextProps.summonerData.status === 'success'){
       this.props.resetSummonerStatus();
 			this.props.getMatchHistoryData(nextProps.summonerData.summonerData.accountId, 0, 5);

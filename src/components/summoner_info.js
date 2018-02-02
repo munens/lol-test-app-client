@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
 const Summoner = (props) => {
-	console.log(props.summonerData)
+	const summoner = props.summonerData;
+	console.log(props)
 	return (
 		<div className="summoner-data">
-			
+			{summoner &&
+				<div>
+					<h1>{summoner.name}</h1>
+					<h1>{summoner.summonerLevel}</h1>
+				</div>
+			}
 		</div>
 	);
 }
