@@ -23,6 +23,7 @@ export function getMatchHistoryData(accountId, startIndex, endIndex){
 				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'success', error: null, payload: data });
 			})
 			.catch(err => {
+				console.log(err)
 				dispatch({ type: GET_MATCH_HISTORY_DATA, status: 'error', error: err, payload: null });
 			});
 	}

@@ -17,9 +17,7 @@ class App extends Component {
 		this.props.getSummonerData('RiotSchmick');
 	}
 
-	componentDidMount() {
-  
-  }
+	componentDidMount() {}
 
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.summonerData.status === 'success'){
